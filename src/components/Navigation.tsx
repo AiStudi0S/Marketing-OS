@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Home, LayoutDashboard, Users, Shield, Code2, Settings, BookOpen, Menu, X, LogOut, User, Zap, Brain, Sparkles, Target, TrendingUp } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import type { Role } from '../contexts/AuthContext';
 import type { Page } from '../types/pages';
 
 interface NavigationProps {
@@ -12,7 +13,7 @@ interface NavTab {
   id: Page;
   label: string;
   icon: React.ReactNode;
-  roles?: string[];
+  roles?: Role[];
   group?: 'main' | 'brandos';
 }
 
@@ -39,7 +40,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   const visibleTabs = tabs.filter(tab => {
     if (!tab.roles) return true;
-    return tab.roles.some(role => hasRole(role as Parameters<typeof hasRole>[0]));
+    return tab.roles.some(role => hasRole(role));
   });
 
   const mainTabs = visibleTabs.filter(t => t.group === 'main');

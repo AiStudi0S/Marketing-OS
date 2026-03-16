@@ -136,7 +136,7 @@ export default function BrandIntelligencePage() {
         <CardContent>
           <div className="space-y-3">
             {trendingTopics.map((t, i) => (
-              <div key={i} className="flex items-center gap-4">
+              <div key={t.topic} className="flex items-center gap-4">
                 <div className="text-xs font-bold w-5 text-center" style={{ color: '#94a3b8' }}>#{i + 1}</div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">

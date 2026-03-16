@@ -2,9 +2,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Brain, Sparkles, Target, Zap, TrendingUp, DollarSign, BarChart3, Users, ArrowRight, Activity } from 'lucide-react';
 import type { Page } from '../types/pages';
 
+interface Department {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+  color: string;
+  status: string;
+  metric: string;
+  description: string;
+  page: Page;
+}
+
 /** Each department maps to a navigable page. Distribution Engine, Audience Growth,
  *  Revenue Optimization, and Analytics all live inside the combined Swarm Traffic Engine page. */
-const departments = [
+const departments: Department[] = [
   {
     id: 'brand-intelligence',
     name: 'Brand Intelligence AI',
