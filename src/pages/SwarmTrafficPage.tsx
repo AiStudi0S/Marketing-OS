@@ -138,7 +138,7 @@ export default function SwarmTrafficPage() {
                 <XAxis dataKey="month" stroke="#94a3b8" tick={{ fontSize: 11 }} />
                 <YAxis stroke="#94a3b8" tick={{ fontSize: 11 }} tickFormatter={v => `${(v / 1000).toFixed(0)}K`} />
                 <Tooltip contentStyle={{ background: '#0f0f2a', border: '1px solid rgba(251,191,36,0.2)', color: '#e2e8f0' }}
-                  formatter={(v: number) => [v.toLocaleString()]} />
+                  formatter={(v: number) => v.toLocaleString()} />
                 <Area type="monotone" dataKey="visitors" stroke="#00f5ff" strokeWidth={2} fill="url(#visitGrad)" name="Visitors" />
                 <Area type="monotone" dataKey="subscribers" stroke="#bf00ff" strokeWidth={2} fill="url(#subGrad)" name="Subscribers" />
               </AreaChart>
