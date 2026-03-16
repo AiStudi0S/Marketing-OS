@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Brain, Sparkles, Target, Zap, TrendingUp, DollarSign, BarChart3, Users, ArrowRight, Activity } from 'lucide-react';
 
+/** Each department maps to a navigable page. Distribution Engine, Audience Growth,
+ *  Revenue Optimization, and Analytics all live inside the combined Swarm Traffic Engine page. */
 const departments = [
   {
     id: 'brand-intelligence',
@@ -10,6 +12,7 @@ const departments = [
     status: 'active',
     metric: '47 signals',
     description: 'Monitoring trends, competitors & audience shifts',
+    page: 'brand-intelligence',
   },
   {
     id: 'content-studio',
@@ -19,6 +22,7 @@ const departments = [
     status: 'active',
     metric: '12 assets/hr',
     description: 'Generating articles, videos & graphics automatically',
+    page: 'content-studio',
   },
   {
     id: 'campaigns',
@@ -28,33 +32,37 @@ const departments = [
     status: 'active',
     metric: '84 campaigns',
     description: 'Running micro-campaigns across all platforms',
+    page: 'campaigns',
   },
   {
-    id: 'swarm-traffic',
+    id: 'distribution',
     name: 'Distribution Engine',
     icon: <Zap size={22} />,
     color: '#fbbf24',
     status: 'active',
     metric: '6 channels',
     description: 'Publishing & scheduling across social channels',
+    page: 'swarm-traffic',
   },
   {
-    id: 'swarm-traffic',
+    id: 'audience-growth',
     name: 'Audience Growth AI',
     icon: <TrendingUp size={22} />,
     color: '#f97316',
     status: 'active',
     metric: '+2.4K/day',
     description: 'SEO loops, viral content & newsletter growth',
+    page: 'swarm-traffic',
   },
   {
-    id: 'swarm-traffic',
+    id: 'revenue',
     name: 'Revenue Optimization',
     icon: <DollarSign size={22} />,
     color: '#a3e635',
     status: 'active',
     metric: '+18% CVR',
     description: 'A/B testing funnels & pricing experiments',
+    page: 'swarm-traffic',
   },
   {
     id: 'influence-network',
@@ -64,15 +72,17 @@ const departments = [
     status: 'active',
     metric: '1,240 creators',
     description: 'AI micro-creators growing audiences autonomously',
+    page: 'influence-network',
   },
   {
-    id: 'swarm-traffic',
+    id: 'analytics',
     name: 'Analytics & Insights',
     icon: <BarChart3 size={22} />,
     color: '#38bdf8',
     status: 'active',
     metric: 'Real-time',
     description: 'ClickHouse-powered dashboards & forecasting',
+    page: 'swarm-traffic',
   },
 ];
 
@@ -148,7 +158,7 @@ export default function BrandOSPage({ onNavigate }: BrandOSPageProps) {
           {departments.map((dept, i) => (
             <button
               key={i}
-              onClick={() => onNavigate(dept.id)}
+              onClick={() => onNavigate(dept.page)}
               className="neo-card p-4 text-left transition-all hover:scale-[1.02] group"
               style={{ cursor: 'pointer' }}
             >

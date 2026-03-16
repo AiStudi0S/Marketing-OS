@@ -39,7 +39,7 @@ const audienceSegments = [
 const radarData = [
   { metric: 'Reach', our: 84, avg: 52 },
   { metric: 'Engagement', our: 89, avg: 62 },
-  { metric: 'Growth', our: 41, avg: 18 },
+  { metric: 'Growth', our: 76, avg: 38 },
   { metric: 'Content Vol', our: 78, avg: 45 },
   { metric: 'SEO', our: 71, avg: 58 },
   { metric: 'Sentiment', our: 92, avg: 67 },
