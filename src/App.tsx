@@ -9,8 +9,13 @@ import DeveloperDashboard from './pages/DeveloperDashboard';
 import UsersPage from './pages/UsersPage';
 import SettingsPage from './pages/SettingsPage';
 import DocsPage from './pages/DocsPage';
-
-type Page = 'home' | 'dashboard' | 'users' | 'admin' | 'developer' | 'settings' | 'docs';
+import BrandOSPage from './pages/BrandOSPage';
+import BrandIntelligencePage from './pages/BrandIntelligencePage';
+import ContentStudioPage from './pages/ContentStudioPage';
+import CampaignStrategyPage from './pages/CampaignStrategyPage';
+import SwarmTrafficPage from './pages/SwarmTrafficPage';
+import InfluenceNetworkPage from './pages/InfluenceNetworkPage';
+import type { Page } from './types/pages';
 
 function AppContent() {
   const { isAuthenticated } = useAuth();
@@ -29,6 +34,12 @@ function AppContent() {
       case 'users': return <UsersPage />;
       case 'settings': return <SettingsPage />;
       case 'docs': return <DocsPage />;
+      case 'brand-os': return <BrandOSPage onNavigate={setCurrentPage} />;
+      case 'brand-intelligence': return <BrandIntelligencePage />;
+      case 'content-studio': return <ContentStudioPage />;
+      case 'campaigns': return <CampaignStrategyPage />;
+      case 'swarm-traffic': return <SwarmTrafficPage />;
+      case 'influence-network': return <InfluenceNetworkPage />;
       default: return <HomePage />;
     }
   };
