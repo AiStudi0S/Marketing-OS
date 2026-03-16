@@ -8,7 +8,7 @@ This guide helps you resolve common issues when working with the Spark Template.
 
 ```bash
 # Check Node.js version
-node --version  # Should be 18.x or later
+node --version  # Should be 20.19.0 or later (or 22.12.0 or later)
 
 # Check npm version
 npm --version   # Should be 9.x or later
@@ -72,8 +72,8 @@ npm run lint
    
    Using nvm:
    ```bash
-   nvm install 18
-   nvm use 18
+   nvm install 20
+   nvm use 20
    ```
 
 3. **Verify installation**

@@ -6,7 +6,7 @@ This guide will help you set up and start developing with the Spark Template.
 
 Before you begin, ensure you have the following installed:
 
-- **Node.js** (version 18.x or later recommended)
+- **Node.js** (version 20.19.0 or later, or 22.12.0 or later)
 - **npm** (version 9.x or later) or **yarn** (version 1.22.x or later)
 - **Git** for version control
 - A code editor (VS Code recommended)

@@ -35,7 +35,7 @@ We are committed to providing a welcoming and inclusive experience for everyone.
 
 Before contributing, ensure you have:
 
-- Node.js 18.x or later
+- Node.js 20.19.0 or later (or 22.12.0 or later)
 - npm 9.x or later
 - Git
 - A GitHub account
@@ -110,7 +110,7 @@ If applicable, add screenshots.
 ## Environment
 - OS: [e.g., macOS 13.0]
 - Browser: [e.g., Chrome 120]
-- Node Version: [e.g., 18.17.0]
+- Node Version: [e.g., 20.19.0]
 - npm Version: [e.g., 9.6.7]
 
 ## Additional Context
