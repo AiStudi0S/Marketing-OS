@@ -1,0 +1,16 @@
+# Governance — protected file ownership
+# Changes to these files require a repository administrator review.
+
+# Core architectural documentation
+ARCHITECTURE.md              @SMSDAO
+docs/                        @SMSDAO
+docs/ARCHITECTURE.md         @SMSDAO
+
+# Governance and prompt artifacts
+prompts/                     @SMSDAO
+governance/                  @SMSDAO
+specs/                       @SMSDAO
+
+# CI/CD system (changes require careful review)
+.github/                     @SMSDAO
+scripts/                     @SMSDAO
