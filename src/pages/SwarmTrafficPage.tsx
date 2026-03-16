@@ -280,7 +280,7 @@ export default function SwarmTrafficPage() {
                     <div className="text-xs w-20 font-medium" style={{ color: '#94a3b8' }}>{item.name}</div>
                     <div className="flex-1 h-7 rounded relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
                       <div className="absolute inset-y-0 left-0 rounded flex items-center px-2"
-                        style={{ width: `${(item.value / 284000) * 100}%`, background: `${item.fill}25`, borderRight: `2px solid ${item.fill}` }}>
+                        style={{ width: `${(item.value / funnelData[0].value) * 100}%`, background: `${item.fill}25`, borderRight: `2px solid ${item.fill}` }}>
                       </div>
                       <span className="absolute inset-0 flex items-center px-2 text-xs font-bold" style={{ color: item.fill }}>
                         {item.value.toLocaleString()}

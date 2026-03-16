@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Brain, Sparkles, Target, Zap, TrendingUp, DollarSign, BarChart3, Users, ArrowRight, Activity } from 'lucide-react';
+import type { Page } from '../types/pages';
 
 /** Each department maps to a navigable page. Distribution Engine, Audience Growth,
  *  Revenue Optimization, and Analytics all live inside the combined Swarm Traffic Engine page. */
@@ -121,7 +122,7 @@ const typeColor: Record<string, string> = {
 };
 
 interface BrandOSPageProps {
-  onNavigate: (page: string) => void;
+  onNavigate: (page: Page) => void;
 }
 
 export default function BrandOSPage({ onNavigate }: BrandOSPageProps) {
@@ -155,9 +156,9 @@ export default function BrandOSPage({ onNavigate }: BrandOSPageProps) {
       <div>
         <h2 className="text-lg font-semibold mb-3" style={{ color: '#e2e8f0' }}>AI Departments</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {departments.map((dept, i) => (
+          {departments.map((dept) => (
             <button
-              key={i}
+              key={dept.id}
               onClick={() => onNavigate(dept.page)}
               className="neo-card p-4 text-left transition-all hover:scale-[1.02] group"
               style={{ cursor: 'pointer' }}
@@ -235,12 +236,17 @@ export default function BrandOSPage({ onNavigate }: BrandOSPageProps) {
       {/* Architecture Overview */}
       <Card style={{ background: '#0f0f2a', border: '1px solid rgba(191,0,255,0.2)' }}>
         <CardHeader>
-          <CardTitle style={{ color: '#e2e8f0' }}>System Architecture</CardTitle>
+          <CardTitle style={{ color: '#e2e8f0' }}>
+            System Architecture
+            <span className="ml-2 text-xs font-normal px-2 py-0.5 rounded" style={{ background: 'rgba(251,191,36,0.1)', color: '#fbbf24', border: '1px solid rgba(251,191,36,0.25)', verticalAlign: 'middle' }}>
+              conceptual target stack
+            </span>
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs">
             {[
-              { layer: 'Frontend', tech: 'Next.js · React', color: '#00f5ff' },
+              { layer: 'Frontend', tech: 'React · Vite · TypeScript', color: '#00f5ff' },
               { layer: 'Backend', tech: 'Node.js · FastAPI', color: '#bf00ff' },
               { layer: 'Data', tech: 'ClickHouse · Kafka', color: '#00ff88' },
               { layer: 'Infra', tech: 'Docker · K8s · AWS', color: '#fbbf24' },

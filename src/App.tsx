@@ -15,9 +15,7 @@ import ContentStudioPage from './pages/ContentStudioPage';
 import CampaignStrategyPage from './pages/CampaignStrategyPage';
 import SwarmTrafficPage from './pages/SwarmTrafficPage';
 import InfluenceNetworkPage from './pages/InfluenceNetworkPage';
-
-type Page = 'home' | 'dashboard' | 'users' | 'admin' | 'developer' | 'settings' | 'docs'
-  | 'brand-os' | 'brand-intelligence' | 'content-studio' | 'campaigns' | 'swarm-traffic' | 'influence-network';
+import type { Page } from './types/pages';
 
 function AppContent() {
   const { isAuthenticated } = useAuth();
@@ -36,7 +34,7 @@ function AppContent() {
       case 'users': return <UsersPage />;
       case 'settings': return <SettingsPage />;
       case 'docs': return <DocsPage />;
-      case 'brand-os': return <BrandOSPage onNavigate={p => setCurrentPage(p as Page)} />;
+      case 'brand-os': return <BrandOSPage onNavigate={setCurrentPage} />;
       case 'brand-intelligence': return <BrandIntelligencePage />;
       case 'content-studio': return <ContentStudioPage />;
       case 'campaigns': return <CampaignStrategyPage />;

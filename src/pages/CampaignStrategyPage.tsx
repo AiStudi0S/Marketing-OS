@@ -125,21 +125,24 @@ export default function CampaignStrategyPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {platforms.map((p, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="text-xs font-semibold w-20" style={{ color: p.color }}>{p.name}</div>
-                  <div className="flex-1">
-                    <div className="flex justify-between text-xs mb-1" style={{ color: '#94a3b8' }}>
-                      <span>{p.active} campaigns</span>
-                      <span>${p.budget}</span>
+              {(() => {
+                const maxBudget = Math.max(...platforms.map(p => p.budget));
+                return platforms.map((p, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="text-xs font-semibold w-20" style={{ color: p.color }}>{p.name}</div>
+                    <div className="flex-1">
+                      <div className="flex justify-between text-xs mb-1" style={{ color: '#94a3b8' }}>
+                        <span>{p.active} campaigns</span>
+                        <span>${p.budget}</span>
+                      </div>
+                      <div className="h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                        <div className="h-full rounded-full" style={{ width: `${(p.budget / maxBudget) * 100}%`, background: p.color }} />
+                      </div>
                     </div>
-                    <div className="h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                      <div className="h-full rounded-full" style={{ width: `${(p.budget / 1200) * 100}%`, background: p.color }} />
-                    </div>
+                    <div className="text-xs font-bold w-12 text-right" style={{ color: '#00ff88' }}>{p.ctr}%</div>
                   </div>
-                  <div className="text-xs font-bold w-12 text-right" style={{ color: '#00ff88' }}>{p.ctr}%</div>
-                </div>
-              ))}
+                ));
+              })()}
             </div>
           </CardContent>
         </Card>

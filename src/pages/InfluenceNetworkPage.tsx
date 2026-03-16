@@ -138,16 +138,19 @@ export default function InfluenceNetworkPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {platformBreakdown.map((p, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="text-xs font-semibold w-20" style={{ color: p.color }}>{p.platform}</div>
-                  <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                    <div className="h-full rounded-full" style={{ width: `${(p.creators / 420) * 100}%`, background: p.color }} />
+              {(() => {
+                const maxCreators = Math.max(...platformBreakdown.map(p => p.creators));
+                return platformBreakdown.map((p, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="text-xs font-semibold w-20" style={{ color: p.color }}>{p.platform}</div>
+                    <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                      <div className="h-full rounded-full" style={{ width: `${(p.creators / maxCreators) * 100}%`, background: p.color }} />
+                    </div>
+                    <div className="text-xs w-8 font-bold text-right" style={{ color: p.color }}>{p.creators}</div>
+                    <div className="text-xs w-16 text-right" style={{ color: '#94a3b8' }}>{p.avgFollowers} avg</div>
                   </div>
-                  <div className="text-xs w-8 font-bold text-right" style={{ color: p.color }}>{p.creators}</div>
-                  <div className="text-xs w-16 text-right" style={{ color: '#94a3b8' }}>{p.avgFollowers} avg</div>
-                </div>
-              ))}
+                ));
+              })()}
             </div>
           </CardContent>
         </Card>

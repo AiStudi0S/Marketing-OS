@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { Home, LayoutDashboard, Users, Shield, Code2, Settings, BookOpen, Menu, X, LogOut, User, Zap, Brain, Sparkles, Target, TrendingUp } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-
-type Page = 'home' | 'dashboard' | 'users' | 'admin' | 'developer' | 'settings' | 'docs'
-  | 'brand-os' | 'brand-intelligence' | 'content-studio' | 'campaigns' | 'swarm-traffic' | 'influence-network';
+import type { Page } from '../types/pages';
 
 interface NavigationProps {
   currentPage: Page;

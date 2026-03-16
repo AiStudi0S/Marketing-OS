@@ -103,20 +103,23 @@ export default function ContentStudioPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {contentTypes.map((ct, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div style={{ color: ct.color }}>{ct.icon}</div>
-                  <div className="flex-1">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm" style={{ color: '#e2e8f0' }}>{ct.type}</span>
-                      <span className="text-sm font-bold" style={{ color: ct.color }}>{ct.count}</span>
-                    </div>
-                    <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                      <div className="h-full rounded-full" style={{ width: `${(ct.count / 42) * 100}%`, background: ct.color }} />
+              {(() => {
+                const maxCount = Math.max(...contentTypes.map(ct => ct.count));
+                return contentTypes.map((ct, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div style={{ color: ct.color }}>{ct.icon}</div>
+                    <div className="flex-1">
+                      <div className="flex justify-between mb-1">
+                        <span className="text-sm" style={{ color: '#e2e8f0' }}>{ct.type}</span>
+                        <span className="text-sm font-bold" style={{ color: ct.color }}>{ct.count}</span>
+                      </div>
+                      <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                        <div className="h-full rounded-full" style={{ width: `${(ct.count / maxCount) * 100}%`, background: ct.color }} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ));
+              })()}
             </div>
           </CardContent>
         </Card>
