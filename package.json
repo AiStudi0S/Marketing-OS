@@ -67,7 +67,7 @@
         "react-dom": "^19.2.6",
         "react-error-boundary": "^6.1.1",
         "react-hook-form": "^7.76.0",
-        "react-resizable-panels": "^2.1.7",
+        "react-resizable-panels": "^4.11.2",
         "recharts": "^2.15.1",
         "sonner": "^2.0.1",
         "tailwind-merge": "^3.6.0",
